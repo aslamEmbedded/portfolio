@@ -18,8 +18,7 @@
             color: #2d4d2f; /* Dark green text */
             margin: 0;
             padding: 0;
-            position: relative;
-            overflow: hidden; /* Hide the drops falling outside the screen */
+            overflow-x: hidden; /* Disable horizontal scroll */
         }
 
         header {
@@ -185,6 +184,7 @@
         .container {
             padding-top: 50px;
             padding-bottom: 50px;
+            min-height: 100vh; /* Ensures content stretches if necessary */
         }
 
         .contact-section {
