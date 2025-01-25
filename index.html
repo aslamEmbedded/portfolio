@@ -42,39 +42,47 @@
             z-index: 1;
         }
 
+        /* Vertical Electricity Flow */
         .electricity-flow {
             position: absolute;
-            top: 50%;
-            left: 0;
-            width: 200%;
-            height: 3px;
-            background: linear-gradient(45deg, #4caf50, #76ff03, #4caf50, #76ff03);
-            background-size: 300% 100%;
-            animation: electricityFlow 2s infinite linear;
+            top: -100%;
+            left: 50%;
+            width: 3px;
+            height: 200%;
+            background: linear-gradient(to bottom, #4caf50, #76ff03, #4caf50, #76ff03);
+            background-size: 100% 300%;
+            animation: electricityFlow 2s infinite ease-in-out;
             z-index: 0;
+            transform: translateX(-50%);
         }
 
         .electricity-flow:nth-child(2) {
-            top: 60%;
+            left: 20%;
             animation-delay: 1s;
         }
 
         .electricity-flow:nth-child(3) {
-            top: 40%;
+            left: 80%;
             animation-delay: 2s;
         }
 
         .electricity-flow:nth-child(4) {
-            top: 30%;
+            left: 40%;
             animation-delay: 0.5s;
         }
 
         @keyframes electricityFlow {
             0% {
-                background-position: 200% 0;
+                top: -100%;
+                background-position: 0% 0;
+            }
+            50% {
+                top: 100%;
+                background-position: 100% 100%;
             }
             100% {
-                background-position: -200% 0;
+                top: -100%;
+                background-position: 0% 0;
             }
         }
 
@@ -151,7 +159,7 @@
 </head>
 
 <body>
-    <!-- Header Section with Electricity Flow Animation -->
+    <!-- Header Section with Vertical Electricity Flow Animation -->
     <header>
         <div class="container">
             <div class="electricity-flow"></div>
