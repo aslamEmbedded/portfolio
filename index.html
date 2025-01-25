@@ -110,18 +110,6 @@
             font-size: 0.9rem;
         }
 
-        /* Progress Bars */
-        .progress {
-            height: 25px;
-            margin-top: 15px;
-        }
-
-        /* Hover Effect for Cards */
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
-
         /* Electricity Flow Animation */
         .electricity-flow {
             position: absolute;
@@ -133,9 +121,46 @@
             background: linear-gradient(to right, #4caf50 25%, #f4f9f1 25%, #4caf50 50%, #f4f9f1 50%, #4caf50 75%, #f4f9f1 75%, #4caf50);
             background-size: 200% 100%;
             animation: electricityPulse 1.5s linear infinite;
+            z-index: 0;
+        }
+
+        /* Adding multiple curved lines */
+        .electricity-flow-curve {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, #4caf50 25%, #f4f9f1 25%, #4caf50 50%, #f4f9f1 50%, #4caf50 75%, #f4f9f1 75%, #4caf50);
+            background-size: 200% 100%;
+            animation: electricityCurve 2s linear infinite;
+            z-index: 0;
+            border-radius: 50%;
+        }
+
+        .electricity-flow-curve:nth-child(2) {
+            top: 55%;
+            transform: translateX(-50%) rotate(-45deg);
+            animation-delay: 0.5s;
+        }
+
+        .electricity-flow-curve:nth-child(3) {
+            top: 60%;
+            transform: translateX(-50%) rotate(30deg);
+            animation-delay: 1s;
         }
 
         @keyframes electricityPulse {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        @keyframes electricityCurve {
             0% {
                 background-position: 200% 0;
             }
@@ -147,10 +172,13 @@
 </head>
 
 <body>
-    <!-- Header Section with Electricity Flow Animation -->
+    <!-- Header Section with Multiple Curved Electricity Flow Animation -->
     <header>
         <div class="container">
             <div class="electricity-flow"></div>
+            <div class="electricity-flow-curve"></div>
+            <div class="electricity-flow-curve"></div>
+            <div class="electricity-flow-curve"></div>
             <h1>Sk Aslam Ali</h1>
             <p>DIPLOMA IN ELECTRONICS & TELECOMMUNICATION | EMBEDDED SYSTEMS & PCB DESIGN</p>
         </div>
