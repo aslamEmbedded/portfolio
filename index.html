@@ -4,81 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aslam's Portfolio - Embedded Systems & PCB Design</title>
-    
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJ3Q1KYO9eJkDItf3WkquHEmn6p3wQfZ1USMLRo2bMzA5e2zwZQ4Y8Qv9GJ7" crossorigin="anonymous">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
+
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
         }
 
         header {
-            background: #007bff; /* Minimal color */
+            background-color: #1e2a38; /* Dark header */
             color: white;
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
         }
 
-        .header-title {
+        header h1 {
             font-size: 3rem;
             font-weight: 600;
+            margin-bottom: 10px;
         }
 
-        .header-subtitle {
+        header p {
             font-size: 1.2rem;
-            font-weight: 400;
+            font-weight: 300;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #1e2a38;
+            margin-bottom: 30px;
         }
 
         .card {
             border: none;
-            border-radius: 10px;
-        }
-
-        .card-body {
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .section-title {
-            color: #007bff;
-            font-size: 2rem;
-            font-weight: 600;
+            border-radius: 12px;
             margin-bottom: 30px;
         }
 
-        .section-text {
-            font-size: 1.1rem;
-            font-weight: 400;
+        .card-body {
+            padding: 25px;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
+        .card-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #1e2a38;
+        }
+
+        .card-text {
+            color: #666;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        .btn-primary {
+            background-color: #1e2a38;
+            border-color: #1e2a38;
+            font-size: 1.1rem;
+            padding: 12px 20px;
+            margin-top: 20px;
+        }
+
+        .btn-primary:hover {
+            background-color: #18222d;
+            border-color: #18222d;
+        }
+
+        footer {
+            background-color: #1e2a38;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .container {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .text-muted {
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 
@@ -87,51 +108,47 @@
     <!-- Header Section -->
     <header>
         <div class="container">
-            <h1 class="header-title">Aslam</h1>
-            <p class="header-subtitle">Diploma in Electronics & Telecommunication | Embedded Systems & PCB Design</p>
+            <h1>Aslam</h1>
+            <p>DIPLOMA IN ELECTRONICS & TELECOMMUNICATION | EMBEDDED SYSTEMS & PCB DESIGN</p>
         </div>
     </header>
 
     <!-- About Me Section -->
-    <section id="about" class="py-5">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <p class="section-text">
-                Hello! I'm Aslam, an Embedded Systems Developer and PCB Designer. I hold a diploma in Electronics and Telecommunication, and I'm passionate about creating innovative solutions in the world of embedded systems and IoT.
-            </p>
-            <p class="section-text">
-                I have hands-on experience with ESP32, Raspberry Pi, Arduino, and a variety of smart display systems. My expertise includes designing custom PCBs and building smart, interactive systems.
-            </p>
-        </div>
+    <section id="about" class="container text-center">
+        <h2 class="section-title">About Me</h2>
+        <p class="lead">
+            I’m Aslam, an Embedded Systems Developer with a passion for building innovative projects. I specialize in working with microcontrollers like ESP32, Arduino, Raspberry Pi, and I design custom PCBs for embedded systems.
+        </p>
+        <p class="lead">
+            My expertise lies in developing IoT solutions, creating smart displays, and integrating them into real-world applications. I’m always looking for new challenges to push the boundaries of what can be achieved with embedded technology.
+        </p>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="bg-light py-5">
-        <div class="container">
-            <h2 class="section-title text-center">Skills & Technologies</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Embedded C</h5>
-                            <p class="card-text">Proficient in Embedded C programming for microcontrollers like ESP32, Arduino, and Raspberry Pi.</p>
-                        </div>
+    <section id="skills" class="container text-center bg-light">
+        <h2 class="section-title">Skills & Expertise</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Embedded C</h5>
+                        <p class="card-text">Proficient in Embedded C programming for microcontrollers like ESP32, Arduino, and Raspberry Pi.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">PCB Design</h5>
-                            <p class="card-text">Experience in designing custom PCBs using tools like KiCad, Eagle, and Altium for embedded systems.</p>
-                        </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">PCB Design</h5>
+                        <p class="card-text">Experience in designing and prototyping custom PCBs for embedded systems using tools like KiCad, Eagle, and Altium.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">IoT & Smart Displays</h5>
-                            <p class="card-text">Worked with IoT devices, integrating sensors, displays, and actuators for smart home and wearable solutions.</p>
-                        </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">IoT & Smart Displays</h5>
+                        <p class="card-text">Built multiple IoT solutions integrating sensors, displays, and actuators for home automation, health monitoring, and more.</p>
                     </div>
                 </div>
             </div>
@@ -139,32 +156,30 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center">Selected Projects</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Smart Home Automation</h5>
-                            <p class="card-text">Built an IoT-based smart home automation system with ESP32, sensors, and a custom PCB design.</p>
-                        </div>
+    <section id="projects" class="container text-center">
+        <h2 class="section-title">Selected Projects</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Smart Home Automation</h5>
+                        <p class="card-text">Developed an IoT-based smart home automation system using ESP32 and sensors. Designed a custom PCB for seamless integration.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Wearable Health Monitoring</h5>
-                            <p class="card-text">Designed a health monitoring wearable using Arduino, sensors, and a cloud-based dashboard for data visualization.</p>
-                        </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Wearable Health Monitoring</h5>
+                        <p class="card-text">Created a wearable health monitoring system using Arduino, integrating sensors to track health metrics and sending data to a cloud platform.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Industrial IoT Sensor Network</h5>
-                            <p class="card-text">Developed an industrial IoT sensor network for real-time data collection and monitoring of equipment performance using ESP32 and custom PCBs.</p>
-                        </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Industrial IoT Sensor Network</h5>
+                        <p class="card-text">Developed a sensor network for industrial applications using ESP32, enabling real-time equipment monitoring and data collection.</p>
                     </div>
                 </div>
             </div>
@@ -172,12 +187,19 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-light py-5">
-        <div class="container">
-            <h2 class="section-title text-center">Contact Me</h2>
-            <p class="section-text text-center">Feel free to reach out if you'd like to collaborate or learn more about my work!</p>
-            <div class="text-center">
-                <a href="mailto:your.email@example.com" class="btn btn-primary">Contact Me</a>
-            </div>
-        </div>
- 
+    <section id="contact" class="container text-center">
+        <h2 class="section-title">Contact Me</h2>
+        <p>If you'd like to discuss collaboration opportunities or simply get in touch, feel free to contact me!</p>
+        <a href="mailto:your.email@example.com" class="btn btn-primary">Contact Me</a>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p class="text-muted">&copy; 2025 Aslam. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gyb6kD3Xg9aTOq5Y9FwFfXyQ7R5lFg5h47flQw1L0uY6uJw0PpQ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0wX7QwXX8+K8vly8pB9n9mEKg2pOg7tyr9jeOq0xC6lgJPzB" crossorigin="anonymous"></script>
+</body>
+</html>
