@@ -110,18 +110,18 @@
 
         /* Apply fadeIn animation for sections */
         section {
-            animation: fadeIn 1.5s ease-out;
+            animation: fadeIn 1.5s ease-out forwards;
         }
 
         /* Apply slide-in animation for specific sections */
         #about, #skills, #projects, #contact {
-            animation: slideInFromBottom 1.5s ease-out;
+            animation: slideInFromBottom 1.5s ease-out forwards;
         }
 
         /* Add slide-in effect for individual card containers */
         .card {
-            animation: slideInFromLeft 1.2s ease-out;
-            opacity: 0;
+            animation: slideInFromLeft 1.2s ease-out forwards;
+            opacity: 0; /* Keep opacity 0 initially, will change to 1 on animation completion */
         }
 
         /* Hover Effect for Cards */
