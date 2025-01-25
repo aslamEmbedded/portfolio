@@ -42,61 +42,87 @@
             font-weight: 300;
         }
 
-        /* Falling Drops */
-        .electricity-drop {
+        /* Falling Water Drops */
+        .water-drop {
             position: absolute;
-            top: -10%;
-            width: 2px;
+            top: -50px;
+            width: 4px;
             height: 20px;
             background-color: #76ff03; /* Bright green to mimic electricity */
-            animation: fall 2s linear infinite, drift 3s ease-in-out infinite;
-            z-index: 1;
+            border-radius: 50%;
+            animation: fall 3s linear infinite, drift 3s ease-in-out infinite;
+            opacity: 0.7;
         }
 
-        /* Randomized Fall and Drift Effect */
-        .electricity-drop:nth-child(1) {
-            left: 10%;
+        /* Randomized Drop Locations and Animations */
+        .water-drop:nth-child(1) {
+            left: 15%;
+            animation-duration: 4s;
             animation-delay: 0s;
         }
 
-        .electricity-drop:nth-child(2) {
+        .water-drop:nth-child(2) {
             left: 25%;
+            animation-duration: 6s;
             animation-delay: 0.5s;
         }
 
-        .electricity-drop:nth-child(3) {
-            left: 50%;
+        .water-drop:nth-child(3) {
+            left: 35%;
+            animation-duration: 5s;
             animation-delay: 1s;
         }
 
-        .electricity-drop:nth-child(4) {
-            left: 70%;
+        .water-drop:nth-child(4) {
+            left: 45%;
+            animation-duration: 7s;
             animation-delay: 1.5s;
         }
 
-        .electricity-drop:nth-child(5) {
-            left: 85%;
+        .water-drop:nth-child(5) {
+            left: 55%;
+            animation-duration: 4.5s;
             animation-delay: 2s;
+        }
+
+        .water-drop:nth-child(6) {
+            left: 65%;
+            animation-duration: 6.5s;
+            animation-delay: 2.5s;
+        }
+
+        .water-drop:nth-child(7) {
+            left: 75%;
+            animation-duration: 3.5s;
+            animation-delay: 3s;
+        }
+
+        .water-drop:nth-child(8) {
+            left: 85%;
+            animation-duration: 5s;
+            animation-delay: 3.5s;
         }
 
         @keyframes fall {
             0% {
-                top: -10%;
+                top: -50px;
+                opacity: 0.7;
             }
             100% {
-                top: 100%;
+                top: 100vh; /* Makes it fall all the way down */
+                opacity: 0; /* Makes the drop fade as it falls */
             }
         }
 
         @keyframes drift {
             0% {
-                left: 10%;
+                left: 0%;
             }
             50% {
-                left: 25%;
+                left: 20%;
             }
             100% {
-                left: 10%;
+                left: 0%;
             }
         }
 
@@ -175,11 +201,14 @@
 <body>
     <!-- Header Section with Falling Drops Animation -->
     <header>
-        <div class="electricity-drop"></div>
-        <div class="electricity-drop"></div>
-        <div class="electricity-drop"></div>
-        <div class="electricity-drop"></div>
-        <div class="electricity-drop"></div>
+        <div class="water-drop"></div>
+        <div class="water-drop"></div>
+        <div class="water-drop"></div>
+        <div class="water-drop"></div>
+        <div class="water-drop"></div>
+        <div class="water-drop"></div>
+        <div class="water-drop"></div>
+        <div class="water-drop"></div>
         <h1>Sk Aslam Ali</h1>
         <p>DIPLOMA IN ELECTRONICS & TELECOMMUNICATION | EMBEDDED SYSTEMS & PCB DESIGN</p>
     </header>
@@ -272,4 +301,7 @@
     </footer>
 
     <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/d
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gyb6kD3Xg9aTOq5Y9FwFfXyQ7R5lFg5h47flQw1L0uY6uJw0PpQ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0wX7QwXX8+K8vly8pB9n9mEKg2pOg7tyr9jeOq0xC6lgJPzB" crossorigin="anonymous"></script>
+</body>
+</html>
