@@ -88,6 +88,14 @@
             border-radius: 12px;
             margin-bottom: 20px; /* Reduced space between cards */
             background-color: #e8f5e9; /* Light avocado color for card */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        /* Hover Effect for Cards */
+        .card:hover {
+            transform: scale(1.05); /* Slightly enlarge the card */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Add shadow to lift the card */
+            background-color: #dcedc8; /* Slight color change on hover */
         }
 
         .card-body {
@@ -95,6 +103,7 @@
             background-color: white;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
+            transition: transform 0.3s ease;
         }
 
         .card-title {
@@ -115,6 +124,7 @@
             font-size: 1rem; /* Adjusted button font size */
             padding: 10px 20px; /* Adjusted button padding */
             margin-top: 15px; /* Reduced margin top */
+            transition: background-color 0.3s ease;
         }
 
         .btn-primary:hover {
