@@ -19,11 +19,10 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         header {
-            background-color: #007bff;
+            background-color: #4caf50;
             color: white;
             padding: 40px 0;
             text-align: center;
@@ -41,10 +40,11 @@
             font-weight: 300;
         }
 
+        /* Typewriter Effect */
         .typewriter {
             display: inline-block;
             overflow: hidden;
-            border-right: .15em solid #007bff;
+            border-right: .15em solid #4caf50;
             white-space: nowrap;
             margin: 0 auto;
             animation: typing 3.5s steps(40) 1s 1 normal both, blink 0.75s step-end infinite;
@@ -68,7 +68,7 @@
         .section-title {
             font-size: 2rem;
             font-weight: 600;
-            color: #007bff;
+            color: #4caf50;
             margin-bottom: 20px;
         }
 
@@ -94,8 +94,8 @@
         }
 
         .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
+            background-color: #4caf50;
+            border-color: #4caf50;
             font-size: 1rem;
             padding: 10px 20px;
             margin-top: 15px;
@@ -103,12 +103,12 @@
         }
 
         .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
+            background-color: #388e3c;
+            border-color: #388e3c;
         }
 
         footer {
-            background-color: #007bff;
+            background-color: #4caf50;
             color: white;
             padding: 15px 0;
             text-align: center;
@@ -128,46 +128,25 @@
             font-size: 0.9rem;
         }
 
-        #scrollTopBtn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            font-size: 1.2rem;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-        }
+       /* Scroll to Top Button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff; /* Blue background color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+}
 
-        #scrollTopBtn:hover {
-            background-color: #0056b3;
-        }
+#scrollTopBtn:hover {
+    background-color: #0056b3; /* Darker blue for hover effect */
+}
 
-        /* Progress Bars */
-        .progress {
-            height: 20px;
-        }
-
-        .progress-bar {
-            background-color: #007bff;
-        }
-
-        .dark-mode {
-            background-color: #121212;
-            color: #e0e0e0;
-        }
-
-        .dark-mode .btn-primary {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
-
-        .dark-mode .section-title {
-            color: #ffffff;
-        }
 
     </style>
 </head>
@@ -199,9 +178,6 @@
                     <div class="card-body">
                         <h5 class="card-title">Embedded C/C++</h5>
                         <p class="card-text">Proficient in Embedded C programming for microcontrollers like ESP32, Arduino, and Raspberry Pi.</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 90%"></div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -210,9 +186,6 @@
                     <div class="card-body">
                         <h5 class="card-title">PCB Design</h5>
                         <p class="card-text">Experience in designing and prototyping custom PCBs for embedded systems using tools like KiCad, Eagle, and Altium.</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 85%"></div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -221,9 +194,6 @@
                     <div class="card-body">
                         <h5 class="card-title">IoT & Smart Displays</h5>
                         <p class="card-text">Built multiple IoT solutions integrating sensors, displays, and actuators for home automation, health monitoring, and more.</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 80%"></div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -235,26 +205,26 @@
         <h2 class="section-title">Selected Projects</h2>
         <div class="row">
             <div class="col-md-4">
-                <div class="card" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Smart Home Automation</h5>
-                        <p class="card-text">Developed an IoT-based smart home automation system using ESP32 and sensors.</p>
+                        <p class="card-text">Developed an IoT-based smart home automation system using ESP32 and sensors. Designed a custom PCB for seamless integration.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card" data-bs-toggle="modal" data-bs-target="#projectModal2">
+                <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Wearable Health Monitoring</h5>
-                        <p class="card-text">Created a wearable health monitoring system using Arduino.</p>
+                        <p class="card-text">Created a wearable health monitoring system using Arduino, integrating sensors to track health metrics and sending data to a cloud platform.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card" data-bs-toggle="modal" data-bs-target="#projectModal3">
+                <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Industrial IoT Sensor Network</h5>
-                        <p class="card-text">Developed a sensor network for industrial applications using ESP32.</p>
+                        <p class="card-text">Developed a sensor network for industrial applications using ESP32, enabling real-time equipment monitoring and data collection.</p>
                     </div>
                 </div>
             </div>
@@ -278,9 +248,6 @@
     <!-- Scroll to Top Button -->
     <button id="scrollTopBtn">↑</button>
 
-    <!-- Dark Mode Toggle Button -->
-    <button id="darkModeToggle" class="btn btn-dark" style="position: fixed; top: 20px; right: 20px;">🌙</button>
-
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gyb6kD3Xg9aTOq5Y9FwFfXyQ7R5lFg5h47flQw1L0uY6uJw0PpQ" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0wX7QwXX8+K8vly8pB9n9mEKg2pOg7tyr9jeOq0xC6lgJPzB" crossorigin="anonymous"></script>
@@ -297,13 +264,6 @@
         };
         scrollTopBtn.onclick = function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-
-        // Dark Mode Toggle functionality
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        darkModeToggle.onclick = function() {
-            document.body.classList.toggle('dark-mode');
-            darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? '🌞' : '🌙';
         };
     </script>
 </body>
