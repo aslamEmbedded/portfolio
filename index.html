@@ -26,17 +26,56 @@
             padding: 80px 0;
             text-align: center;
             position: relative;
+            overflow: hidden; /* To hide overflowing lines */
         }
 
         header h1 {
             font-size: 3rem;
             font-weight: 600;
             margin-bottom: 10px;
+            z-index: 1;
         }
 
         header p {
             font-size: 1.2rem;
             font-weight: 300;
+            z-index: 1;
+        }
+
+        .electricity-flow {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 200%;
+            height: 3px;
+            background: linear-gradient(45deg, #4caf50, #76ff03, #4caf50, #76ff03);
+            background-size: 300% 100%;
+            animation: electricityFlow 2s infinite linear;
+            z-index: 0;
+        }
+
+        .electricity-flow:nth-child(2) {
+            top: 60%;
+            animation-delay: 1s;
+        }
+
+        .electricity-flow:nth-child(3) {
+            top: 40%;
+            animation-delay: 2s;
+        }
+
+        .electricity-flow:nth-child(4) {
+            top: 30%;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes electricityFlow {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
         }
 
         .section-title {
@@ -51,7 +90,6 @@
             border-radius: 12px;
             margin-bottom: 30px;
             background-color: #e8f5e9; /* Light avocado color for card */
-            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .card-body {
@@ -109,76 +147,17 @@
         .text-muted {
             font-size: 0.9rem;
         }
-
-        /* Electricity Flow Animation */
-        .electricity-flow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, #4caf50 25%, #f4f9f1 25%, #4caf50 50%, #f4f9f1 50%, #4caf50 75%, #f4f9f1 75%, #4caf50);
-            background-size: 200% 100%;
-            animation: electricityPulse 1.5s linear infinite;
-            z-index: 0;
-        }
-
-        /* Adding multiple curved lines */
-        .electricity-flow-curve {
-            position: absolute;
-            top: 40%;
-            left: 50%;
-            transform: translateX(-50%) rotate(45deg);
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(to right, #4caf50 25%, #f4f9f1 25%, #4caf50 50%, #f4f9f1 50%, #4caf50 75%, #f4f9f1 75%, #4caf50);
-            background-size: 200% 100%;
-            animation: electricityCurve 2s linear infinite;
-            z-index: 0;
-            border-radius: 50%;
-        }
-
-        .electricity-flow-curve:nth-child(2) {
-            top: 55%;
-            transform: translateX(-50%) rotate(-45deg);
-            animation-delay: 0.5s;
-        }
-
-        .electricity-flow-curve:nth-child(3) {
-            top: 60%;
-            transform: translateX(-50%) rotate(30deg);
-            animation-delay: 1s;
-        }
-
-        @keyframes electricityPulse {
-            0% {
-                background-position: 200% 0;
-            }
-            100% {
-                background-position: -200% 0;
-            }
-        }
-
-        @keyframes electricityCurve {
-            0% {
-                background-position: 200% 0;
-            }
-            100% {
-                background-position: -200% 0;
-            }
-        }
     </style>
 </head>
 
 <body>
-    <!-- Header Section with Multiple Curved Electricity Flow Animation -->
+    <!-- Header Section with Electricity Flow Animation -->
     <header>
         <div class="container">
             <div class="electricity-flow"></div>
-            <div class="electricity-flow-curve"></div>
-            <div class="electricity-flow-curve"></div>
-            <div class="electricity-flow-curve"></div>
+            <div class="electricity-flow"></div>
+            <div class="electricity-flow"></div>
+            <div class="electricity-flow"></div>
             <h1>Sk Aslam Ali</h1>
             <p>DIPLOMA IN ELECTRONICS & TELECOMMUNICATION | EMBEDDED SYSTEMS & PCB DESIGN</p>
         </div>
@@ -204,9 +183,6 @@
                     <div class="card-body">
                         <h5 class="card-title">Embedded C</h5>
                         <p class="card-text">Proficient in Embedded C programming for microcontrollers like ESP32, Arduino, and Raspberry Pi.</p>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -215,9 +191,6 @@
                     <div class="card-body">
                         <h5 class="card-title">PCB Design</h5>
                         <p class="card-text">Experience in designing and prototyping custom PCBs for embedded systems using tools like KiCad, Eagle, and Altium.</p>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -226,9 +199,6 @@
                     <div class="card-body">
                         <h5 class="card-title">IoT & Smart Displays</h5>
                         <p class="card-text">Built multiple IoT solutions integrating sensors, displays, and actuators for home automation, health monitoring, and more.</p>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
                     </div>
                 </div>
             </div>
