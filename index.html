@@ -14,159 +14,146 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f4f9f1; /* Light green background */
-            color: #2d4d2f; /* Dark green text */
+            background-color: #f4f9f1;
+            color: #2d4d2f;
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* Disable horizontal scroll */
+            overflow-x: hidden;
         }
 
         header {
-            background-color: #4caf50; /* Avocado green header */
+            background-color: #4caf50;
             color: white;
-            padding: 40px 0; /* Reduced padding */
+            padding: 40px 0;
             text-align: center;
             position: relative;
-            z-index: 2;
         }
 
         header h1 {
-            font-size: 2.5rem; /* Adjusted font size */
+            font-size: 2.5rem;
             font-weight: 600;
             margin-bottom: 10px;
         }
 
         header p {
-            font-size: 1rem; /* Adjusted font size */
+            font-size: 1rem;
             font-weight: 300;
         }
 
-        /* Falling Water Drops */
-        .water-drop {
-            position: absolute;
-            top: -50px;
-            width: 4px;
-            height: 20px;
-            background-color: #76ff03; /* Bright green to mimic electricity */
-            border-radius: 50%;
-            animation: fall 3s linear infinite, drift 3s ease-in-out infinite;
-            opacity: 0.7;
+        /* Typewriter Effect */
+        .typewriter {
+            display: inline-block;
+            overflow: hidden;
+            border-right: .15em solid #4caf50;
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: typing 3.5s steps(40) 1s 1 normal both, blink 0.75s step-end infinite;
         }
 
-        @keyframes fall {
-            0% {
-                top: -50px;
-                opacity: 0.7;
+        @keyframes typing {
+            from {
+                width: 0;
             }
-            100% {
-                top: 100vh; /* Makes it fall all the way down */
-                opacity: 0; /* Makes the drop fade as it falls */
+            to {
+                width: 100%;
             }
         }
 
-        @keyframes drift {
-            0% {
-                left: 0%;
-            }
+        @keyframes blink {
             50% {
-                left: 20%;
-            }
-            100% {
-                left: 0%;
+                border-color: transparent;
             }
         }
 
         .section-title {
-            font-size: 2rem; /* Reduced title font size */
+            font-size: 2rem;
             font-weight: 600;
-            color: #4caf50; /* Avocado green color for titles */
-            margin-bottom: 20px; /* Reduced space under titles */
+            color: #4caf50;
+            margin-bottom: 20px;
         }
 
         .card {
             border: none;
             border-radius: 12px;
-            margin-bottom: 20px; /* Reduced space between cards */
-            background-color: #e8f5e9; /* Light avocado color for card */
+            margin-bottom: 20px;
+            background-color: #e8f5e9;
             transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
         }
 
-        /* Hover Effect for Cards */
         .card:hover {
-            transform: scale(1.05); /* Slightly enlarge the card */
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Add shadow to lift the card */
-            background-color: #dcedc8; /* Slight color change on hover */
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            background-color: #dcedc8;
         }
 
         .card-body {
-            padding: 20px; /* Reduced padding */
+            padding: 20px;
             background-color: white;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .card-title {
-            font-size: 1.5rem; /* Adjusted card title font size */
-            font-weight: 600;
-            color: #4caf50; /* Avocado green for titles */
-        }
-
-        .card-text {
-            color: #666;
-            font-size: 1rem;
-            margin-top: 10px;
         }
 
         .btn-primary {
-            background-color: #4caf50; /* Avocado green button */
+            background-color: #4caf50;
             border-color: #4caf50;
-            font-size: 1rem; /* Adjusted button font size */
-            padding: 10px 20px; /* Adjusted button padding */
-            margin-top: 15px; /* Reduced margin top */
+            font-size: 1rem;
+            padding: 10px 20px;
+            margin-top: 15px;
             transition: background-color 0.3s ease;
         }
 
         .btn-primary:hover {
-            background-color: #388e3c; /* Darker green for hover effect */
+            background-color: #388e3c;
             border-color: #388e3c;
         }
 
         footer {
-            background-color: #4caf50; /* Avocado green footer */
+            background-color: #4caf50;
             color: white;
-            padding: 15px 0; /* Reduced padding */
+            padding: 15px 0;
             text-align: center;
         }
 
         .container {
-            padding-top: 30px; /* Reduced top padding */
-            padding-bottom: 30px; /* Reduced bottom padding */
+            padding-top: 30px;
+            padding-bottom: 30px;
         }
 
         .contact-section {
-            padding: 60px 0; /* Reduced padding */
-            min-height: 250px; /* Reduced minimum height */
+            padding: 60px 0;
+            min-height: 250px;
         }
 
         .text-muted {
             font-size: 0.9rem;
         }
+
+        /* Scroll to Top Button */
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+        }
+
+        #scrollTopBtn:hover {
+            background-color: #388e3c;
+        }
+
     </style>
 </head>
 
 <body>
-    <!-- Header Section with Falling Drops Animation -->
+    <!-- Header Section with Typewriter Effect -->
     <header>
-        <div class="water-drop"></div>
-        <div class="water-drop"></div>
-        <div class="water-drop"></div>
-        <div class="water-drop"></div>
-        <div class="water-drop"></div>
-        <div class="water-drop"></div>
-        <div class="water-drop"></div>
-        <div class="water-drop"></div>
-        <h1>Sk Aslam Ali</h1>
+        <h1 class="typewriter">Sk Aslam Ali</h1>
         <p>DIPLOMA IN ELECTRONICS & TELECOMMUNICATION | EMBEDDED SYSTEMS & PCB DESIGN</p>
     </header>
 
@@ -257,8 +244,26 @@
         <p class="text-muted">&copy; 2025 Aslam. All Rights Reserved.</p>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn">↑</button>
+
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gyb6kD3Xg9aTOq5Y9FwFfXyQ7R5lFg5h47flQw1L0uY6uJw0PpQ" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0wX7QwXX8+K8vly8pB9n9mEKg2pOg7tyr9jeOq0xC6lgJPzB" crossorigin="anonymous"></script>
+
+    <script>
+        // Scroll to Top Button functionality
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.onscroll = function() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                scrollTopBtn.style.display = "block";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        };
+        scrollTopBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
 </body>
 </html>
