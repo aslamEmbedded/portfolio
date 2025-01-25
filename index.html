@@ -1,264 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aslam's Portfolio - Embedded Systems & PCB Design</title>
+/* Add fade-in and slide-in animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f9f1; /* Light green background */
-            color: #2d4d2f; /* Dark green text */
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden; /* Disable horizontal scroll */
-        }
+/* Apply fadeIn animation for sections */
+section {
+    animation: fadeIn 1.5s ease-out;
+}
 
-        header {
-            background-color: #4caf50; /* Avocado green header */
-            color: white;
-            padding: 40px 0; /* Reduced padding */
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
+/* Apply slide-in animation for specific sections */
+#about, #skills, #projects, #contact {
+    animation: slideInFromBottom 1.5s ease-out;
+}
 
-        header h1 {
-            font-size: 2.5rem; /* Adjusted font size */
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
+/* Add slide-in effect for individual card containers */
+.card {
+    animation: slideInFromLeft 1.2s ease-out;
+    opacity: 0;
+}
 
-        header p {
-            font-size: 1rem; /* Adjusted font size */
-            font-weight: 300;
-        }
+/* Hover Effect for Cards */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    background-color: #dcedc8;
+}
 
-        /* Falling Water Drops */
-        .water-drop {
-            position: absolute;
-            top: -50px;
-            width: 4px;
-            height: 20px;
-            background-color: #76ff03; /* Bright green to mimic electricity */
-            border-radius: 50%;
-            animation: fall 3s linear infinite, drift 3s ease-in-out infinite;
-            opacity: 0.7;
-        }
+/* Contact Button Hover Animation */
+.btn-primary {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
-        @keyframes fall {
-            0% {
-                top: -50px;
-                opacity: 0.7;
-            }
-            100% {
-                top: 100vh; /* Makes it fall all the way down */
-                opacity: 0; /* Makes the drop fade as it falls */
-            }
-        }
-
-        @keyframes drift {
-            0% {
-                left: 0%;
-            }
-            50% {
-                left: 20%;
-            }
-            100% {
-                left: 0%;
-            }
-        }
-
-        .section-title {
-            font-size: 2rem; /* Reduced title font size */
-            font-weight: 600;
-            color: #4caf50; /* Avocado green color for titles */
-            margin-bottom: 20px; /* Reduced space under titles */
-        }
-
-        .card {
-            border: none;
-            border-radius: 12px;
-            margin-bottom: 20px; /* Reduced space between cards */
-            background-color: #e8f5e9; /* Light avocado color for card */
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-        }
-
-        /* Hover Effect for Cards */
-        .card:hover {
-            transform: scale(1.05); /* Slightly enlarge the card */
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Add shadow to lift the card */
-            background-color: #dcedc8; /* Slight color change on hover */
-        }
-
-        .card-body {
-            padding: 20px; /* Reduced padding */
-            background-color: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .card-title {
-            font-size: 1.5rem; /* Adjusted card title font size */
-            font-weight: 600;
-            color: #4caf50; /* Avocado green for titles */
-        }
-
-        .card-text {
-            color: #666;
-            font-size: 1rem;
-            margin-top: 10px;
-        }
-
-        .btn-primary {
-            background-color: #4caf50; /* Avocado green button */
-            border-color: #4caf50;
-            font-size: 1rem; /* Adjusted button font size */
-            padding: 10px 20px; /* Adjusted button padding */
-            margin-top: 15px; /* Reduced margin top */
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #388e3c; /* Darker green for hover effect */
-            border-color: #388e3c;
-        }
-
-        footer {
-            background-color: #4caf50; /* Avocado green footer */
-            color: white;
-            padding: 15px 0; /* Reduced padding */
-            text-align: center;
-        }
-
-        .container {
-            padding-top: 30px; /* Reduced top padding */
-            padding-bottom: 30px; /* Reduced bottom padding */
-        }
-
-        .contact-section {
-            padding: 60px 0; /* Reduced padding */
-            min-height: 250px; /* Reduced minimum height */
-        }
-
-        .text-muted {
-            font-size: 0.9rem;
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Header Section with Falling Drops Animation -->
-    <header>
-        <div class="water-drop"></div>
-        <div class="water-drop"></div>
-        <div class="water-drop"></div>
-        <div class="water-drop"></div>
-        <div class="water-drop"></div>
-        <div class="water-drop"></div>
-        <div class="water-drop"></div>
-        <div class="water-drop"></div>
-        <h1>Sk Aslam Ali</h1>
-        <p>DIPLOMA IN ELECTRONICS & TELECOMMUNICATION | EMBEDDED SYSTEMS & PCB DESIGN</p>
-    </header>
-
-    <!-- About Me Section -->
-    <section id="about" class="container text-center">
-        <h2 class="section-title">About Me</h2>
-        <p class="lead">
-            I’m Aslam, an Embedded Systems Developer with a passion for building innovative projects. I specialize in working with microcontrollers like ESP32, Arduino, Raspberry Pi, and I design custom PCBs for embedded systems.
-        </p>
-        <p class="lead">
-            My expertise lies in developing IoT solutions, creating smart displays, and integrating them into real-world applications. I’m always looking for new challenges to push the boundaries of what can be achieved with embedded technology.
-        </p>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="container text-center bg-light">
-        <h2 class="section-title">Skills & Expertise</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Embedded C/C++</h5>
-                        <p class="card-text">Proficient in Embedded C programming for microcontrollers like ESP32, Arduino, and Raspberry Pi.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">PCB Design</h5>
-                        <p class="card-text">Experience in designing and prototyping custom PCBs for embedded systems using tools like KiCad, Eagle, and Altium.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">IoT & Smart Displays</h5>
-                        <p class="card-text">Built multiple IoT solutions integrating sensors, displays, and actuators for home automation, health monitoring, and more.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="container text-center">
-        <h2 class="section-title">Selected Projects</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Smart Home Automation</h5>
-                        <p class="card-text">Developed an IoT-based smart home automation system using ESP32 and sensors. Designed a custom PCB for seamless integration.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Wearable Health Monitoring</h5>
-                        <p class="card-text">Created a wearable health monitoring system using Arduino, integrating sensors to track health metrics and sending data to a cloud platform.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Industrial IoT Sensor Network</h5>
-                        <p class="card-text">Developed a sensor network for industrial applications using ESP32, enabling real-time equipment monitoring and data collection.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="container text-center contact-section">
-        <h2 class="section-title">Contact Me</h2>
-        <p>If you'd like to discuss collaboration opportunities or simply get in touch, feel free to contact me!</p>
-        <div class="d-flex justify-content-center">
-            <a href="mailto:aa1397284@gmail.com" class="btn btn-primary px-4 py-3">Contact Me</a>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer>
-        <p class="text-muted">&copy; 2025 Aslam. All Rights Reserved.</p>
-    </footer>
-
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gyb6kD3Xg9aTOq5Y9FwFfXyQ7R5lFg5h47flQw1L0uY6uJw0PpQ" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0wX7QwXX8+K8vly8pB9n9mEKg2pOg7tyr9jeOq0xC6lgJPzB" crossorigin="anonymous"></script>
-</body>
-</html>
+.btn-primary:hover {
+    transform: scale(1.1);
+    background-color: #388e3c;
+    border-color: #388e3c;
+}
