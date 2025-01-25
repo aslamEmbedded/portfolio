@@ -25,6 +25,7 @@
             color: white;
             padding: 80px 0;
             text-align: center;
+            position: relative;
         }
 
         header h1 {
@@ -50,6 +51,7 @@
             border-radius: 12px;
             margin-bottom: 30px;
             background-color: #e8f5e9; /* Light avocado color for card */
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .card-body {
@@ -108,14 +110,51 @@
             font-size: 0.9rem;
         }
 
+        /* Progress Bars */
+        .progress {
+            height: 25px;
+            margin-top: 15px;
+        }
+
+        /* Hover Effect for Cards */
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Circuit Animation */
+        .circuit-animation {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            background: url('https://cdn-icons-png.flaticon.com/512/517/517251.png') no-repeat center center;
+            background-size: 100px;
+            animation: circuitPulse 3s infinite;
+        }
+
+        @keyframes circuitPulse {
+            0% {
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                transform: scale(1.2) rotate(180deg);
+            }
+            100% {
+                transform: scale(1) rotate(360deg);
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Header Section -->
+    <!-- Header Section with Circuit Animation -->
     <header>
         <div class="container">
+            <div class="circuit-animation"></div>
             <h1>Sk Aslam Ali</h1>
             <p>DIPLOMA IN ELECTRONICS & TELECOMMUNICATION | EMBEDDED SYSTEMS & PCB DESIGN</p>
         </div>
@@ -141,6 +180,9 @@
                     <div class="card-body">
                         <h5 class="card-title">Embedded C</h5>
                         <p class="card-text">Proficient in Embedded C programming for microcontrollers like ESP32, Arduino, and Raspberry Pi.</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -149,6 +191,9 @@
                     <div class="card-body">
                         <h5 class="card-title">PCB Design</h5>
                         <p class="card-text">Experience in designing and prototyping custom PCBs for embedded systems using tools like KiCad, Eagle, and Altium.</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -157,6 +202,9 @@
                     <div class="card-body">
                         <h5 class="card-title">IoT & Smart Displays</h5>
                         <p class="card-text">Built multiple IoT solutions integrating sensors, displays, and actuators for home automation, health monitoring, and more.</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                 </div>
             </div>
